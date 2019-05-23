@@ -75,12 +75,74 @@ int exercise() {
     return 0;
 }
 
+//MARK: -
+// Даны целые массивы А[10], B[10] и значения C,E,D,F.  Каждый массив преобразовать следующим образом
+// если элемнт массива A[i] >= 0, то он заменяется на значение C, иначе на значение D. Если элемент массива B[i] >= 0 , то он заменяется на значение Е, иначе на занчение F.
+void exercise_2() {
+    const int N = 10;
+    int A[N], B[N];
+    int C,E,D,F;
+    
+    printf("exercise_2 begin  \n");
+    printf("Введите значения для первого массива: \n");
+    for(int i = 0; i < N; i++) {
+        printf("A[%d]: ", i);
+        if (scanf("%d", &A[i]) != 1) {
+            fprintf(stderr, "Ошибка");
+        }
+    }
+    
+    printf("Введите значения для Второго массива: \n");
+    
+    for(int i = 0; i < N; i++) {
+        printf("B[%d]: ", i);
+        if (scanf("%d", &B[i]) != 1) {
+            fprintf(stderr, "Ошибка");
+        }
+    }
+    
+    printf("Введите значения переменных: \n");
+    printf("C: ");
+    scanf("%d", &C);
+    printf("E: ");
+    scanf("%d", &E);
+    printf("D: ");
+    scanf("%d", &D);
+    printf("F: ");
+    scanf("%d", &F);
+    
+    //Выполним условие задачи и заменим элементы массива
+    for(int i = 0; i < N; i++) {
+        if (A[i] >= 0) {
+            A[i] = C;
+        } else {
+            A[i] = D;
+        }
+    }
+    
+    for(int i = 0; i < N; i++) {
+        if (B[i] >= 0) {
+            B[i] = D;
+        } else {
+            B[i] = F;
+        }
+    }
+    
+    printf("Массив А после преобазования: \n");
+    for (int i = 0;i < N; i ++) {
+        printf("A[%d] = %d, ", i, A[i]);
+    }
+    printf("\n");
+    printf("Массив B после преобразования: \n") ;
+    
+    for (int i = 0;i < N; i ++) {
+        printf("B[%d] = %d, ", i, B[i]);
+    }
+}
+
 int main()
 {
-    
-    //calculate();
-    exercise();
-
+    exercise_2();
 }
 
 
